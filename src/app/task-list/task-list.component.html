@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>Task List</h1>
+
+  <div class="task-list">
+    <div
+      class="task-list-item"
+      *ngFor="let task of tasks"
+      [ngClass]="{
+        yellow: task.status === 'To Do',
+        blue: task.status === 'In Progress',
+        green: task.status === 'Done'
+      }"
+    >
+      <div class="task-list-item-title">{{ task.title }}</div>
+      <div class="task-list-item-description">{{ task.description }}</div>
+      <div class="task-list-item-status">{{ task.status }}</div>
+      <div class="task-list-item-actions">
+        <button
+          class="btn task-list-item-actions-button"
+          (click)="deleteTask(task.id)"
+        >
+          Delete
+        </button>
+        <div class="task-list-item-actions">
+          <button class="btn task-list-item-actions-button">
+            <a
+              [routerLink]="['/edit-task', task.id]"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+              >Edit</a
+            >
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

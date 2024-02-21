@@ -10,7 +10,7 @@
     align-items: center;
 }
 
-.navbar-menu ul {
+.navbar-menu-list {
     list-style: none;
     display: flex;
     justify-content: space-between;
@@ -19,7 +19,12 @@
     margin: 0;
 }
 
-.navbar-menu ul li {
+.navbar-menu-list-item {
     margin: 0 10px;
     cursor: pointer;
+}
+
+.navbar-menu-list-item a {
+    text-decoration: none;
+    color: #000;
 }
