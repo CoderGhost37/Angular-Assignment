@@ -22,13 +22,11 @@
           Delete
         </button>
         <div class="task-list-item-actions">
-          <button class="btn task-list-item-actions-button">
-            <a
-              [routerLink]="['/edit-task', task.id]"
-              routerLinkActive="active"
-              ariaCurrentWhenActive="page"
-              >Edit</a
-            >
+          <button
+            class="btn task-list-item-actions-button"
+            (click)="navigateToEditTask(task.id)"
+          >
+            Edit
           </button>
         </div>
       </div>

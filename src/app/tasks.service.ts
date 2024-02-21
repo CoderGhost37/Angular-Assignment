@@ -4,7 +4,7 @@
 //   providedIn: 'root',
 // })
 
-class Task {
+export class Task {
   id: number;
   title: string;
   description: string;
@@ -44,7 +44,15 @@ export class TasksService {
     alert('Task deleted successfully');
   }
 
-  editTask(id: number, title: string, desc: string, status: string) {
+  editTask(
+    id: number,
+    title: string,
+    desc: string,
+    status: string,
+    event: any
+  ) {
+    event.preventDefault();
+
     this.tasks = this.tasks.map((task) => {
       if (task.id === id) {
         task.title = title;
